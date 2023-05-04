@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "univeristy-website"
+version = "0.1.0"
+description = "university website that uses crypto for payments"
+authors = ["Thoth <thoth2357@gmail.com>"]
+readme = "README.md"
+packages = [{include = "univeristy_website"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^4.2.1"
+django-extensions = "^3.2.1"
+psycopg2 = "^2.9.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
