@@ -25,7 +25,7 @@ class HomeAppConfig(AppConfig):
 
             # Update any base URLs or webhooks to use the public ngrok URL
             settings.BASE_URL = public_url
-            CommonConfig.init_webhooks(public_url)
+            HomeAppConfig.init_webhooks(public_url)
 
     @staticmethod
     def init_webhooks(base_url):
