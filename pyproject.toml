@@ -11,7 +11,11 @@ python = "^3.9"
 Django = "^4.2.1"
 django-extensions = "^3.2.1"
 psycopg2 = "^2.9.6"
+ipython = "^8.13.2"
 
+
+[tool.poetry.group.test.dependencies]
+pyngrok = "^6.0.0"
 
 [build-system]
 requires = ["poetry-core"]
