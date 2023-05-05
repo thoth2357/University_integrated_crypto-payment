@@ -1,0 +1,123 @@
+{% load static%}
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content=" " />
+        <meta name="keywords" content="" />
+
+        <title> 
+            {% block title%}{% endblock title%}
+        </title>
+
+        {% block styles%}
+            <!-- Favicons
+            ================================================== -->
+            <link rel="shortcut icon" href="{% static 'images/favicon.html' %}">
+            <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.html' %}">
+            <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/apple-touch-icon-72x72.html' %}">
+            <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/apple-touch-icon-114x114.html' %}">
+
+            <!-- CSS -->
+            ================================================== -->
+            <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+            <link rel="stylesheet" href="{% static 'css/responsive.css' %}" type="text/css">
+
+            <!-- / color -->
+            <link class="colors_style" rel="stylesheet" href="{% static 'css/color_style/color_1.css' %}" type="text/css"/>
+            <!-- / google font -->
+            <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+            <!-- / settings_box -->
+            <link rel="stylesheet" href="settings_box/settings_box.css' %}" type="text/css">
+
+            <!-- Load jQuery
+            ================================================== -->
+            <script type="text/javascript" src="{% static 'js/modernizr.custom.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/device.min.js' %}"></script>
+        {% endblock styles%}
+    <head>
+    
+    <body class="bg-1">
+        <div>
+        {% block header-content%}
+            
+        {% endblock header-content%}
+
+        {% block main-content%}
+            
+        {% endblock main-content%}
+        
+        {% block mobile-menu-container%}
+        <section id="mobile-menu-container">
+			<a href="index_2.html" id="header-logo_2" class="site-logo">University</a>
+
+			<a id="menu-close" href="javascript:void(0);">Close Menu</a>
+
+			<nav id="mobile-navigation" class="mobile-menu">
+				<ul>
+					<li>
+						<a href="#">Faculties</a>
+
+						<div class="dropdown">
+							<ul>
+								<li><a href="faculties_1.html">Faculties 1</a></li>
+								<li><a href="faculties_2.html">Faculties 2</a></li>
+							</ul>
+						</div>
+					</li>
+
+					<li>
+						<a href="academics.html">Academics</a>
+					</li>
+
+					<li>
+						<a href="#">Courses</a>
+
+						<div class="dropdown">
+							<ul>
+								<li><a href="courses.html">Courses</a></li>
+								<li><a href="courses_details.html">Courses Details</a></li>
+							</ul>
+						</div>
+					</li>
+
+					<li>
+						<a href="#">Pages</a>
+
+						<div class="dropdown">
+							<ul>
+								<li><a href="about.html">About Us</a></li>	
+							</ul>
+						</div>
+					</li>
+
+					<li>
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</nav>
+
+			<nav id="mobile-submenu">
+				<ul>
+					<li><a href="campus_locations.html">Campus and locations</a></li>
+					<li><a href="directory.html">Directory</a></li>
+					<li><a href="study_advice.html">Study advice</a></li>
+					<li><a href="login.html"><i class="icon-user"></i>Login</a></li>
+				</ul>
+			</nav>
+		</section>
+        {% endblock mobile-menu-container%}
+
+        {% block script%}
+            <script type="text/javascript" src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.matchHeight-min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.superslides.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.fs.boxer.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.easing.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.main.js' %}"></script>
+        {% endblock script%}
+    </body>
+</html>
