@@ -6,7 +6,8 @@ from .views import (
     logout_view,
     profile_view,
     payment_cancel,
-    payment_success
+    payment_success,
+    coinbase_webhook
 )
 
 urlpatterns = [
@@ -16,4 +17,5 @@ urlpatterns = [
     path("student-dashboard/", profile_view, name="student-dashboard"),
     path("cancel/", payment_cancel, name="cancel"),
     path("success/", payment_success, name="success"),
+    path("webhook/", coinbase_webhook, name="webhook")
 ]
