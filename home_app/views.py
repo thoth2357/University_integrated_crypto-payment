@@ -43,8 +43,8 @@ def profile_view(request, *args, **kwargs):
         'name': 'School Fees',
         'description': 'School Fees For Sheffield',
         'local_price': {
-            'amount': '5.00',
-            'currency': 'USD'
+            'amount': '8009.00',
+            'currency': 'GBP'
         },
         'pricing_type': 'fixed_price',
         'redirect_url': domain_url + 'success/',
@@ -61,7 +61,7 @@ def payment_cancel(request):
     return render(request, 'cancel.html')
 
 def payment_success(request):
-    return redirect('student-dashboard')
+    return render(request, 'success.html')
 
 @csrf_exempt
 @require_http_methods(['POST'])
@@ -80,6 +80,9 @@ def coinbase_webhook(request):
 
         if event['type'] == 'charge:confirmed':
             logger.info('Payment confirmed.')
+            customer_id = event['data']['metadata']['customer_id'] # new
+            customer_username = event['data']['metadata']['customer_username'] # new
+            return render(request, 'success.html', {'customer_id': customer_id, 'customer_username': customer_username})
             # TODO: run some custom code here
 
     except (SignatureVerificationError, WebhookInvalidPayload) as e:
