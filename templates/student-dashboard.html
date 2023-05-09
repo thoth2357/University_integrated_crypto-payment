@@ -1,6 +1,333 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 {% include "messages.html" %}
 {% load static %}
 
 {% block title %} Profile {% endblock title %} 
+
+{% block header-layout %}
+    <div class="mdk-header-layout__content">
+        <div data-push data-responsive-width="992px" class="mdk-drawer-layout js-mdk-drawer-layout" >
+          <div class="mdk-drawer-layout__content page">
+            <div class="container-fluid page__container p-0">
+              <div class="row m-0">
+                <div class="col-lg container-fluid page__container">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="#">Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">Edit Account</li>
+                  </ol>
+
+                  <div id="invoice">
+                    <div class="card">
+                      <div class="card-header media align-items-center">
+                        <div class="media-body">
+                          <h1 class="card-title h2">Invoice</h1>
+                          <div class="card-subtitle">
+                            Document 10003578 / 20 May 2023
+                          </div>
+                        </div>
+                        <div class="media-right d-flex align-items-center">
+                          <a
+                            href="javascript:window.print()"
+                            class="btn btn-flush text-muted d-print-none mr-3"
+                            ><i class="material-icons font-size-24pt"
+                              >print</i
+                            ></a
+                          >
+
+                          <a
+                            href="{{ charge.hosted_url }}"
+                            class="btn btn-success d-print-none"
+                            >Pay</a
+                          >
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-6">
+                            <p class="text-black-70 m-0">
+                              <strong>Prepared for</strong>
+                            </p>
+                            <h2>Onyekwelu Chukwu</h2>
+                            <div class="text-black-50">
+                              Sheffield, United Kingdom
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <p class="text-black-70 m-0">
+                              <strong>Prepared by</strong>
+                            </p>
+                            <h2>University</h2>
+                            <div class="text-black-50">
+                              811 Attercliffe Road, Sheffield S9 2AA
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card table-responsive">
+                    <table class="table mb-0 table--elevated">
+                      <thead class="thead-light">
+                        <tr>
+                          <th class="border-top-0">Description</th>
+                          <th
+                            class="border-top-0 text-right"
+                            style="width: 120px"
+                          >
+                            Amount
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="d-flex align-items-center">
+                              <div class="flex">
+                                <a
+                                  href="#"
+                                  class="text-body"
+                                >
+                                  <strong>Session 2022/2023 School Fees</strong>
+                                </a>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="text-right">
+                            <strong>&pound;8000 </strong>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p class="mb-1">
+                              <strong>Library </strong>
+                            </p>
+                          </td>
+                          <td class="text-right">
+                            <strong>&pound;9.00</strong>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <table class="table mb-0">
+                      <tfoot>
+                        <tr>
+                          <td class="text-right text-black-70">
+                            <strong>Total</strong>
+                          </td>
+                          <td style="width: 120px" class="text-right">
+                            <strong>&pound;8009.00</strong>
+                          </td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+
+                </div>
+                <div id="page-nav" class="col-lg-auto page-nav">
+                  <div data-perfect-scrollbar>
+                    <div class="page-section pt-lg-32pt">
+                      <ul class="nav page-nav__menu">
+                        <li class="nav-item">
+                          <a
+                            href="#"
+                            class="nav-link"
+                            >Subscription</a
+                          >
+                        </li>
+                        <li class="nav-item">
+                          <a
+                            href="#"
+                            class="nav-link"
+                            >Upgrade Account</a
+                          >
+                        </li>
+                        <li class="nav-item">
+                          <a
+                            href="#"
+                            class="nav-link"
+                            >Payment Information</a
+                          >
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="nav-link"
+                            >Payment History</a
+                          >
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="nav-link active"
+                            >Invoice</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
+            <div class="mdk-drawer__content">
+              <div
+                class="sidebar sidebar-left sidebar-dark bg-dark o-hidden"
+                data-perfect-scrollbar
+              >
+                
+                  <!-- Account menu -->
+                  </br>
+                  
+                  <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item open">
+                      <a
+                        class="sidebar-menu-button sidebar-js-collapse"
+                        data-toggle="collapse"
+                        href="#account_menu"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >person_outline</i
+                        >
+                        Account
+                        <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                      </a>
+                      <ul
+                        class="sidebar-submenu sm-indent collapse show"
+                        id="account_menu"
+                      >
+                        <li class="sidebar-menu-item">
+                          <a
+                            class="sidebar-menu-button"
+                            href="student-account-edit.html"
+                          >
+                            <span class="sidebar-menu-text">Edit Account</span>
+                          </a>
+                        </li>
+                        <li class="sidebar-menu-item">
+                          <a
+                            class="sidebar-menu-button"
+                            href="#"
+                          >
+                            <span class="sidebar-menu-text"
+                              >Basic Information</span
+                            >
+                          </a>
+                        </li>
+                        <li class="sidebar-menu-item">
+                          <a
+                            class="sidebar-menu-button"
+                            href="#"
+                          >
+                            <span class="sidebar-menu-text"
+                              >Profile &amp; Privacy</span
+                            >
+                          </a>
+                        </li>
+                        <li class="sidebar-menu-item">
+                          <a
+                            class="sidebar-menu-button"
+                            href="#"
+                          >
+                            <span class="sidebar-menu-text"
+                              >Upgrade Account</span
+                            >
+                          </a>
+                        </li>
+                        <li class="sidebar-menu-item">
+                          <a
+                            class="sidebar-menu-button"
+                            href="#"
+                          >
+                            <span class="sidebar-menu-text"
+                              >Payment History</span
+                            >
+                          </a>
+                        </li>
+                        <li class="sidebar-menu-item active">
+                          <a
+                            class="sidebar-menu-button"
+                            href="#"
+                          >
+                            <span class="sidebar-menu-text"
+                              >Student Invoice</span
+                            >
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    
+                  </ul>
+                  
+                  <ul class="sidebar-menu sm-active-button-bg">
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="#"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >school</i
+                        >
+                        My Courses
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="#"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >import_contacts</i
+                        >
+                        View Course
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="#"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >poll</i
+                        >
+                        Results
+                      </a>
+                    </li>
+                    
+                    <li class="sidebar-menu-item">
+                      <a class="sidebar-menu-button" href={% url 'logoutpage' %}>
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >lock_open</i
+                        >
+                        Logout
+                      </a>
+                    </li>
+                  </ul>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- App Settings FAB -->
+        <div id="app-settings">
+          <app-settings
+            layout-active="default"
+            :layout-location="{
+                'fixed': 'fixed-student-invoice.html',
+                'default': 'student-invoice.html'
+                }"
+            sidebar-variant="bg-transparent border-0"
+          ></app-settings>
+        </div>
+      </div>
+    </div>  
+{% endblock header-layout %}
 
