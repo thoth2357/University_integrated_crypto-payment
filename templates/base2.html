@@ -1,0 +1,261 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>
+            {% block title %} {% endblock %}
+        </title>
+
+        {% block styles %}
+            <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500%7CRoboto:400,500&amp;display=swap" rel="stylesheet" />
+
+            <!-- Perfect Scrollbar -->
+            <link type="text/css" href="{% static 'vendor/perfect-scrollbar.css' %}" rel="stylesheet" />
+
+            <!-- Material Design Icons -->
+            <link type="text/css" href="{% static 'css/material-icons.css' %}" rel="stylesheet" />
+
+            <!-- Font Awesome Icons -->
+            <link type="text/css" href="{% static 'css/fontawesome.css' %}" rel="stylesheet" />
+
+            <!-- Preloader -->
+            <link type="text/css" href="{% static 'vendor/spinkit.css' %}" rel="stylesheet" />
+
+            <!-- App CSS -->
+            <link type="text/css" href="{% static 'css/app.css' %}" rel="stylesheet" />
+
+        {% endblock styles %}
+    </head>
+
+    <body class="layout-fluid">
+        <div class="mdk-header-layout js-mdk-header-layout">
+            {% block header %}
+                <!-- Header -->
+                    <div id="header" data-fixed class="mdk-header js-mdk-header mb-0">
+                        <div class="mdk-header__content">
+                        <!-- Navbar -->
+                        <nav
+                            id="default-navbar"
+                            class="navbar navbar-expand bg-dark m-0"
+                            
+                        >
+                            <div class="container-fluid">
+                            <!-- Toggle sidebar -->
+                            <button
+                                class="navbar-toggler d-block"
+                                data-toggle="sidebar"
+                                type="button"
+                            >
+                                <span class="material-icons">menu</span>
+                            </button>
+
+                            <!-- Brand -->
+                            <a href="#" class="navbar-brand">
+                                <span class="d-none d-xs-md-block">University</span>
+                            </a>
+
+                            <div class="flex"></div>
+
+                            <!-- Menu -->
+                            <ul class="nav navbar-nav flex-nowrap">
+
+                                <!-- Notifications dropdown -->
+                                <li
+                                class="nav-item dropdown dropdown-notifications dropdown-menu-sm-full"
+                                >
+                                <button
+                                    class="nav-link btn-flush dropdown-toggle"
+                                    type="button"
+                                    data-toggle="dropdown"
+                                    data-dropdown-disable-document-scroll
+                                    data-caret="false"
+                                >
+                                    <i class="material-icons">notifications</i>
+                                    <span class="badge badge-notifications badge-danger"
+                                    >2</span
+                                    >
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div data-perfect-scrollbar class="position-relative">
+                                    <div class="dropdown-header">
+                                        <strong>Messages</strong>
+                                    </div>
+                                    <div class="list-group list-group-flush mb-0">
+                                        <a
+                                        href="#"
+                                        class="list-group-item list-group-item-action unread"
+                                        >
+                                        <span class="d-flex align-items-center mb-1">
+                                            <small class="text-muted">5 minutes ago</small>
+
+                                            <span
+                                            class="ml-auto unread-indicator bg-primary"
+                                            ></span>
+                                        </span>
+                                        <span class="d-flex">
+                                            <span class="avatar avatar-xs mr-2">
+                                            </span>
+                                            <span class="flex d-flex flex-column">
+                                            <strong>Big Data</strong>
+                                            <span class="text-black-70"
+                                                >New Assessment</span
+                                            >
+                                            </span>
+                                        </span>
+                                        </a>
+
+                                        <a
+                                        href="#"
+                                        class="list-group-item list-group-item-action unread"
+                                        >
+                                        <span class="d-flex align-items-center mb-1">
+                                            <small class="text-muted">5 minutes ago</small>
+
+                                            <span
+                                            class="ml-auto unread-indicator bg-primary"
+                                            ></span>
+                                        </span>
+                                        <span class="d-flex">
+                                            <span class="avatar avatar-xs mr-2">
+                                            </span>
+                                            <span class="flex d-flex flex-column">
+                                            <strong>R Programming</strong>
+                                            <span class="text-black-70">🔥 Results In</span>
+                                            </span>
+                                        </span>
+                                        </a>
+                                    </div>
+
+                                    <div class="dropdown-header">
+                                        <strong>System notifications</strong>
+                                    </div>
+                                    <div class="list-group list-group-flush mb-0">
+                                        <a
+                                        href="#"
+                                        class="list-group-item list-group-item-action border-left-3 border-left-danger"
+                                        >
+                                        <span class="d-flex align-items-center mb-1">
+                                            <small class="text-muted">3 minutes ago</small>
+                                        </span>
+                                        <span class="d-flex">
+                                            <span class="avatar avatar-xs mr-2">
+                                            <span
+                                                class="avatar-title rounded-circle bg-light"
+                                            >
+                                                <i
+                                                class="material-icons font-size-16pt text-danger"
+                                                >account_circle</i
+                                                >
+                                            </span>
+                                            </span>
+                                            <span class="flex d-flex flex-column">
+                                            <span class="text-black-70"
+                                                >Your profile information has not been synced
+                                                correctly.</span
+                                            >
+                                            </span>
+                                        </span>
+                                        </a>
+
+                                        <a
+                                        href="#"
+                                        class="list-group-item list-group-item-action"
+                                        >
+                                        <span class="d-flex align-items-center mb-1">
+                                            <small class="text-muted">1 day ago</small>
+                                        </span>
+                                        <span class="d-flex">
+                                            <span class="avatar avatar-xs mr-2">
+                                            <span
+                                                class="avatar-title rounded-circle bg-light"
+                                            >
+                                                <i
+                                                class="material-icons font-size-16pt text-warning"
+                                                >storage</i
+                                                >
+                                            </span>
+                                            </span>
+                                            <span class="flex d-flex flex-column">
+                                            <span class="text-black-70"
+                                                >School Fees Payment in Two days</span
+                                            >
+                                            </span>
+                                        </span>
+                                        </a>
+                                    </div>
+                                    </div>
+                                </div>
+                                </li>
+                                <!-- // END Notifications dropdown -->
+                                <!-- User dropdown -->
+                                <li class="nav-item dropdown ml-1 ml-md-3">
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    href="#"
+                                    role="button"
+                                    ><img
+                                    src="assets/images/people/50/guy-6.jpg"
+                                    alt="Avatar"
+                                    class="rounded-circle"
+                                    width="40"
+                                /></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#">
+                                    <i class="material-icons">edit</i> Edit Account
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                    <i class="material-icons">person</i> Public Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                    <i class="material-icons">lock</i> Logout
+                                    </a>
+                                </div>
+                                </li>
+                                <!-- // END User dropdown -->
+                            </ul>
+                            <!-- // END Menu -->
+                            </div>
+                        </nav>
+                        <!-- // END Navbar -->
+                        </div>
+                    </div>
+                <!-- // END Header -->
+            {% endblock header %}
+
+            {% block header-layout %}
+                  
+            {% endblock header-layout %}
+
+
+            
+
+            {% block script %}
+                <!-- jQuery -->
+                <script src="{% static 'vendor/jquery.min.js' %}"></script>
+
+                <!-- Bootstrap -->
+                <script src="{% static 'vendor/popper.min.js' %}"></script>
+                <script src="{% static 'vendor/bootstrap.min.js' %}"></script>
+
+                <!-- Perfect Scrollbar -->
+                <script src="{% static 'vendor/perfect-scrollbar.min.js' %}"></script>
+
+                <!-- MDK -->
+                <script src="{% static 'vendor/dom-factory.js' %}"></script>
+                <script src="{% static 'vendor/material-design-kit.js' %}"></script>
+
+                <!-- App JS -->
+                <script src="{% static 'js/app.js' %}"></script>
+
+                <!-- Highlight.js -->
+                <script src="{% static 'js/hljs.js' %}"></script>
+
+                <!-- App Settings (safe to remove) -->
+                <script src="{% static 'js/app-settings.js' %}"></script>
+            {% endblock script %}
+
