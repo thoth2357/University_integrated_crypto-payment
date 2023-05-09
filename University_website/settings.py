@@ -162,3 +162,4 @@ DEV_SERVER = len(sys.argv) > 1 and sys.argv[1] == "runserver"
 USE_NGROK = os.environ.get("USE_NGROK", "False") == "True" and os.environ.get("RUN_MAIN", None) != "true"
 
 COINBASE_COMMERCE_API_KEY = 'f03d7f2a-a181-4205-83ec-06f725170c0a'
+COINBASE_COMMERCE_WEBHOOK_SHARED_SECRET = '6e85fa15-cda0-4a1f-ba72-8f7733b5644c' 
