@@ -12,8 +12,8 @@ from .views import (
 
 urlpatterns = [
     path("", home_view, name="homepage"),
-    path("login", login_view, name="loginpage"),
-    path("logout", logout_view, name="logoutpage"),
+    path("login/", login_view, name="loginpage"),
+    path("logout/", logout_view, name="logoutpage"),
     path("student-dashboard/", profile_view, name="student-dashboard"),
     path("cancel/", payment_cancel, name="cancel"),
     path("success/", payment_success, name="success"),
