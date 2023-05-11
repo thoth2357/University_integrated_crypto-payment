@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     
     "home_app.apps.HomeAppConfig",
-    "payments.apps.PaymentsConfig",
+    # "payments.apps.PaymentsConfig",
     
     "django_extensions",
 ]
